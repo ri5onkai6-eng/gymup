@@ -307,7 +307,12 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (!expandedDate) {
+    if (!expandedDate || !photosByDate[expandedDate]) {
+      return
+    }
+
+    const shouldLockScroll = window.matchMedia('(max-width: 1024px)').matches
+    if (!shouldLockScroll) {
       return
     }
 
@@ -321,7 +326,7 @@ function App() {
       document.body.style.overflow = originalBodyOverflow
       document.documentElement.style.overflow = originalHtmlOverflow
     }
-  }, [expandedDate])
+  }, [expandedDate, photosByDate])
 
   useEffect(() => setWeightDraft(String(weight)), [weight])
   useEffect(() => setRepsDraft(String(reps)), [reps])
