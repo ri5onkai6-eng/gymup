@@ -39,7 +39,10 @@ self.addEventListener('fetch', (event) => {
 
   if (event.request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(`${BASE_PATH}index.html`)),
+      caches.match(`${BASE_PATH}index.html`).then((cached) => {
+        if (cached) return cached
+        return fetch(event.request)
+      }),
     )
     return
   }
