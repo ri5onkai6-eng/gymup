@@ -306,28 +306,6 @@ function App() {
     }
   }, [])
 
-  useEffect(() => {
-    if (!expandedDate || !photosByDate[expandedDate]) {
-      return
-    }
-
-    const shouldLockScroll = window.matchMedia('(max-width: 1024px)').matches
-    if (!shouldLockScroll) {
-      return
-    }
-
-    const originalBodyOverflow = document.body.style.overflow
-    const originalHtmlOverflow = document.documentElement.style.overflow
-
-    document.body.style.overflow = 'hidden'
-    document.documentElement.style.overflow = 'hidden'
-
-    return () => {
-      document.body.style.overflow = originalBodyOverflow
-      document.documentElement.style.overflow = originalHtmlOverflow
-    }
-  }, [expandedDate, photosByDate])
-
   useEffect(() => setWeightDraft(String(weight)), [weight])
   useEffect(() => setRepsDraft(String(reps)), [reps])
   useEffect(() => setSetsDraft(String(sets)), [sets])
