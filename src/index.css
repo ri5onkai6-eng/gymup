@@ -1,0 +1,38 @@
+:root {
+  font-family: Inter, 'Segoe UI', Roboto, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  background:
+    radial-gradient(circle at 10% 10%, #182e55 0%, transparent 34%),
+    radial-gradient(circle at 90% 80%, #3f1542 0%, transparent 35%),
+    #060b14;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}

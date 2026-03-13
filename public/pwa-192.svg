@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f1a31"/>
+      <stop offset="100%" stop-color="#08101e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#59ecff"/>
+      <stop offset="60%" stop-color="#3c84ff"/>
+      <stop offset="100%" stop-color="#ff3dc9"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="44" fill="url(#bg)"/>
+  <circle cx="96" cy="96" r="58" fill="none" stroke="url(#accent)" stroke-width="14" stroke-linecap="round" stroke-dasharray="260 120" transform="rotate(-90 96 96)"/>
+  <path d="M75 98h42M96 77v42" stroke="#f5fbff" stroke-width="10" stroke-linecap="round"/>
+  <text x="96" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#dce8ff">GYMUP</text>
+</svg>
