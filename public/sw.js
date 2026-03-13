@@ -1,6 +1,14 @@
 const STATIC_CACHE = 'gymup-static-v1'
 const RUNTIME_CACHE = 'gymup-runtime-v1'
-const APP_SHELL = ['/', '/index.html', '/manifest.webmanifest', '/pwa-192.svg', '/pwa-512.svg']
+const SCOPE_PATH = new URL(self.registration.scope).pathname
+const BASE_PATH = SCOPE_PATH.endsWith('/') ? SCOPE_PATH : `${SCOPE_PATH}/`
+const APP_SHELL = [
+  BASE_PATH,
+  `${BASE_PATH}index.html`,
+  `${BASE_PATH}manifest.webmanifest`,
+  `${BASE_PATH}pwa-192.svg`,
+  `${BASE_PATH}pwa-512.svg`,
+]
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -31,7 +39,7 @@ self.addEventListener('fetch', (event) => {
 
   if (event.request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match('/index.html')),
+      fetch(event.request).catch(() => caches.match(`${BASE_PATH}index.html`)),
     )
     return
   }

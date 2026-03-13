@@ -6,7 +6,7 @@
   min-height: 100svh;
   padding: 40px 20px calc(56px + env(safe-area-inset-bottom));
   color: #f8fbff;
-  overflow-x: clip;
+  overflow-x: visible;
 }
 
 .bg-orb {
